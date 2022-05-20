@@ -1,0 +1,33 @@
+<div class="container">
+  {{> header }}
+</div>
+
+<main class="container pt-3">
+  <div class="jumbotron pt-3">
+    <h3>Productos</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each products}}
+        <tr>
+          <th scope="row" class="align-middle">{{id}}</th>
+          <td class="align-middle">{{name}}</td>
+          <td class="align-middle">{{price}}</td>
+          <td class="align-middle"><img src="{{thumbnail}}" alt="{{name}}" width="100"></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<div class="container">
+  {{> footer }}
+</div>

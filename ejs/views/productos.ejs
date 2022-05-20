@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/head') %>
+</head>
+
+<body>
+  <div class="container">
+    <%- include('./partials/header', { current: 'productos' }) %>
+  </div>
+  <main class="container pt-3">
+    <div class="jumbotron pt-3">
+      <h3>Productos</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Imagen</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% products.forEach(product=> { %>
+            <tr>
+              <td scope="row" class="align-middle">
+                <%= product.id %>
+              </td>
+              <td class="align-middle">
+                <%= product.name %>
+              </td>
+              <td class="align-middle">
+                <%= product.price %>
+              </td>
+              <td class="align-middle"><img src="<%= product.thumbnail %>" alt="<%= product.name %>" width="100"></td>
+            </tr>
+            <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <div class="container">
+    <%- include('./partials/footer') %>
+  </div>
+</body>
+
+</html>

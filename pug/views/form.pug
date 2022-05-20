@@ -1,0 +1,17 @@
+extends index.pug
+
+block content
+  main(class="container pt-3")
+    div(class="jumbotron pt-3")
+      h3 Ingrese un producto 
+      form(action="/productos", method="POST")
+        div(class="form-group")
+          label(for="name") Nombre 
+          input(type="text", class="form-control", name="name")
+        div(class="form-group")
+          label(for="price") Precio 
+          input(type="text", class="form-control", name="price")
+        div(class="form-group")
+          label(for="thumbnail") Thumbnail 
+          input(type="text", class="form-control", name="thumbnail")
+        button(type="submit", class="btn btn-primary") Guardar

@@ -1,0 +1,21 @@
+extends index.pug
+
+block content
+  main(class="container pt-3")
+    div(class="jumbotron pt-3")
+      h3 Productos 
+      table(class="table")
+        thead
+          tr
+            th(scope="col") ID 
+            th(scope="col") Nombre
+            th(scope="col") Precio
+            th(scope="col") Imagen 
+        tbody 
+          each producto in products
+            tr
+              td(scope="row" class="align-middle")= producto.id
+              td(class="align-middle")= producto.name
+              td(class="align-middle")= producto.price
+              td(class="align-middle")
+                img(src=producto.thumbnail, alt=producto.name, width="100")
